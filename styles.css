@@ -91,6 +91,7 @@ body {
 /* Next button section */
 #nextButton {
   margin-top: 1rem;
+  text-align: center;
 }
 
 #nextButton .buttons {

@@ -1,25 +1,75 @@
 const questions = [
 
-    {
-        text: "Who is the CEO of OpenAI?",
-        options: [
-            { text: "Sam Altman", correct: true },
-            { text: "Elon Musk", correct: false },
-            { text: "Sundar Pichai", correct: false },
-            { text: "Mark Zuckerberg", correct: false }
-        ],
-        points: 4
-    },
-    {
-        text: "What language is primarily used for web development?",
-        options: [
-            { text: "JavaScript", correct: true },
-            { text: "Python", correct: false },
-            { text: "C++", correct: false },
-            { text: "Java", correct: false }
-        ],
-        points: 4
-    }
+    { 
+    text: "Who is the CEO of OpenAI?",
+    options: [
+      { text: "Sam Altman", correct: true },
+      { text: "Elon Musk", correct: false },
+      { text: "Sundar Pichai", correct: false },
+      { text: "Mark Zuckerberg", correct: false }
+    ],
+    points: 5
+  },
+  { 
+    text: "What does CSS stand for?",
+    options: [
+      { text: "Creative Style System", correct: false },
+      { text: "Cascading Style Sheets", correct: true },
+      { text: "Computer Style Syntax", correct: false },
+      { text: "Code Styling Standards", correct: false }
+    ],
+    points: 5
+  },
+  { 
+    text: "Which of the following is a JavaScript framework?",
+    options: [
+      { text: "Django", correct: false },
+      { text: "React", correct: true },
+      { text: "Laravel", correct: false },
+      { text: "Flask", correct: false }
+    ],
+    points: 5
+  },
+  { 
+    text: "Which HTML tag is used to link an external CSS file?",
+    options: [
+      { text: "<link>", correct: true },
+      { text: "<style>", correct: false },
+      { text: "<css>", correct: false },
+      { text: "<script>", correct: false }
+    ],
+    points: 5
+  },
+  { 
+    text: "What year was JavaScript created?",
+    options: [
+      { text: "1990", correct: false },
+      { text: "1995", correct: true },
+      { text: "2000", correct: false },
+      { text: "2005", correct: false }
+    ],
+    points: 5
+  },
+  { 
+    text: "Which company owns GitHub?",
+    options: [
+      { text: "Google", correct: false },
+      { text: "Microsoft", correct: true },
+      { text: "Amazon", correct: false },
+      { text: "Apple", correct: false }
+    ],
+    points: 5
+  },
+  { 
+    text: "Which language is primarily used for data science?",
+    options: [
+      { text: "Python", correct: true },
+      { text: "C", correct: false },
+      { text: "Java", correct: false },
+      { text: "Ruby", correct: false }
+    ],
+    points: 5
+  }
 ]
 
 const motivations = [
@@ -110,6 +160,8 @@ function resetState(){
         button.classList.remove("correct");
         button.classList.remove("incorrect");
 
+        button.dataset.correct = null;
+        button.dataset.points = null;
     })
 
     console.log(score);
@@ -153,8 +205,9 @@ function showQuestion(){
         typeWriter(button, option.text, typeWriterSpeed);
         button.dataset.number = optionCount + 1;
 
+        console.log(option.correct);
         if (option.correct === true) {
-            button.dataset.correct = option.correct;
+            button.dataset.correct = option.correct? 'true':'false';
            
         }
 
@@ -177,7 +230,7 @@ function showQuestion(){
     if (currentQuestionNumber === 1) {return}
     const rand = Math.floor(Math.random()*motivations.length);
 
-    console.log(motivations.length); 
+    //console.log(motivations.length); 
     motivationWrite(motivations[rand].head, motivations[rand].text);
 }
 
@@ -189,7 +242,7 @@ function selectOption(e){
         selectedButton.classList.remove("selected");
         return;
     }
-    console.log(selectedButton.isEqualNode(selectedButtonElement));
+    //console.log(selectedButton.isEqualNode(selectedButtonElement));
     if (selectedButtonElement && !selectedButton.isEqualNode(selectedButtonElement)){
 
         selectedButtonElement.classList.remove("selected")
@@ -217,16 +270,16 @@ function submit(){
                 anySelected = true;
             }
 
-            if (button.dataset.correct) {
+            if (button.dataset.correct === 'true') {
 
                 button.classList.add("correct");
                 
                 pointsAdded = parseInt(button.dataset.points);
 
-                console.log("correct");
+                //console.log("correct");
             } else {
                 button.classList.add("incorrect");
-                console.log("incorrect");
+                //console.log("incorrect");
 
                 if (!anyIncorrect) {
                     anyIncorrect = true;
@@ -237,7 +290,7 @@ function submit(){
         }
     })
 
-    console.log(anySelected);
+    //console.log(anySelected);
     if(!anySelected){
 
         alert("select an option");
