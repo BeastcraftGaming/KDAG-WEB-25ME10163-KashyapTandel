@@ -1,31 +1,195 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
-  line-height: 1.6;
+  background-color: #0d0d0d; /* Deep black background */
+  color: #f5f5f5; /* Light text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.selected{
-
-    background: #A9A9A9
-
+/* Quiz container */
+.QuizBox {
+  background: #1a1a1a;
+  border: 1px solid #330000;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
 }
 
-.correct{
-
-    background: #9aeabc;
-
+.QuizBox:hover {
+  transform: scale(1.02);
 }
 
-.incorrect{
+/* Header */
+.header h1 {
+  font-size: 2rem;
+  color: #ff1a1a; /* Neon red */
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-    background: #ff9393;
+/* Question */
+#Question {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #f5f5f5;
+}
 
+.typewriter::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #ff1a1a;
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: blinkCaret 0.9s steps(2, start) infinite;
+}
+
+/* Animations */
+@keyframes blinkCaret {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Options */
+#options {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  background: linear-gradient(90deg, #ff1a1a, #990000);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.buttons:hover {
+  background: linear-gradient(90deg, #990000, #ff1a1a);
+  box-shadow: 0 0 10px #ff1a1a, 0 0 20px #990000;
+}
+
+/* Next button section */
+#nextButton {
+  margin-top: 1rem;
+}
+
+#nextButton .buttons {
+  background: linear-gradient(90deg, #ff0000, #660000);
+  color: white;
+}
+
+#nextButton .buttons:hover {
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #660000;
+}
+
+.selected {
+  background: linear-gradient(90deg, #ff4d4d, #b30000);
+  color: #fff;
+  border: 2px solid #ff4d4d;
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+/* When the answer is correct */
+.correct {
+  background: linear-gradient(90deg, #00cc44, #006622);
+  color: #fff;
+  font-weight: 700;
+  border: 2px solid #00ff66;
+  box-shadow: 0 0 15px #00ff66, 0 0 25px #00cc44;
+  animation: pulse 1s infinite;
+}
+
+/* Green pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #00ff66, 0 0 20px #00cc44;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px #00ff66, 0 0 40px #00cc44;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #00ff66, 0 0 20px #00cc44;
+    transform: scale(1);
+  }
+}
+/* When the answer is incorrect */
+.incorrect {
+  background: #ff0000; /* solid bright red */
+  color: #ffffff;
+  font-weight: 700;
+  border: 2px solid #ff4d4d;
+  box-shadow: 0 0 15px #ff3333, 0 0 30px #ff0000;
+  transform: scale(1.05);
+  animation: shake 0.3s ease-in-out 2;
+}
+
+/* Small shake effect */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Motivational text box */
+.motivation-box {
+  background: #1a1a1a;
+  border: 1px solid #330000;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 250px;
+  min-height: 100px;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.4;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  position: absolute; /* Place it beside the quiz */
+  right: 40px; /* Adjust spacing */
+  top: 50%;
+  transform: translateY(-50%);
+  animation: glowBox 2s infinite alternate;
+}
+
+/* Optional header inside the box */
+.motivation-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ff4d4d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Glow animation */
+@keyframes glowBox {
+  0% {
+    box-shadow: 0 0 10px #ff1a1a, 0 0 20px #660000;
+  }
+  100% {
+    box-shadow: 0 0 20px #ff3333, 0 0 40px #990000;
+  }
 }
