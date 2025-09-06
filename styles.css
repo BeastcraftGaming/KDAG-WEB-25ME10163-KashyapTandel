@@ -155,25 +155,26 @@ body {
   100% { transform: translateX(0); }
 }
 
-/* Motivational text box */
+/* Motivation Box */
 .motivation-box {
   background: #1a1a1a;
   border: 1px solid #330000;
   border-radius: 12px;
   padding: 1.5rem;
-  width: 250px;
-  min-height: 100px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  min-width: 200px;
   color: #f5f5f5;
   font-size: 1rem;
   font-style: italic;
   line-height: 1.4;
   box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  position: absolute; /* Place it beside the quiz */
-  right: 40px; /* Adjust spacing */
-  top: 50%;
-  transform: translateY(-50%);
   animation: glowBox 2s infinite alternate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Optional header inside the box */
@@ -192,5 +193,57 @@ body {
   }
   100% {
     box-shadow: 0 0 20px #ff3333, 0 0 40px #990000;
+  }
+}
+
+/* Responsive layout */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Quiz box sizing */
+.QuizBox {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.motivation-box {
+  flex: 1 1 250px;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.buttons {
+  width: 100%;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .QuizBox,
+  .motivation-box {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .buttons {
+    font-size: 0.9rem;
+    padding: 0.6rem;
   }
 }

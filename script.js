@@ -164,7 +164,7 @@ function resetState(){
         button.dataset.points = null;
     })
 
-    console.log(score);
+    //console.log(score);
     showQuestion();
 
 }
@@ -205,7 +205,7 @@ function showQuestion(){
         typeWriter(button, option.text, typeWriterSpeed);
         button.dataset.number = optionCount + 1;
 
-        console.log(option.correct);
+        //console.log(option.correct);
         if (option.correct === true) {
             button.dataset.correct = option.correct? 'true':'false';
            
@@ -284,9 +284,13 @@ function submit(){
                 if (!anyIncorrect) {
                     anyIncorrect = true;
                 }
-            }
 
+            } 
+            
+        }
+        if (button.dataset.correct === 'true'){
 
+            button.classList.add("correct");
         }
     })
 
