@@ -1,0 +1,19 @@
+
+
+.selected{
+
+    background: #A9A9A9
+
+}
+
+.correct{
+
+    background: #9aeabc;
+
+}
+
+.incorrect{
+
+    background: #ff9393;
+
+}
