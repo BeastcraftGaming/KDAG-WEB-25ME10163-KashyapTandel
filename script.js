@@ -288,7 +288,7 @@ function submit(){
             } 
             
         }
-        if (button.dataset.correct === 'true'){
+        if (button.dataset.correct === 'true' && anySelected){
 
             button.classList.add("correct");
         }
@@ -342,4 +342,5 @@ function motivationWrite(head, text){
     typeWriter(motivText, text);
 
 }
+
 startup();
