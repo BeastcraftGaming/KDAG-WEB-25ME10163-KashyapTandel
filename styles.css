@@ -72,7 +72,8 @@ body {
 }
 
 .buttons {
-  background: linear-gradient(90deg, #ff6600, #cc3300);
+  /*background: linear-gradient(90deg, #ff6600, #cc3300);*/
+  background: linear-gradient(90deg, #ff0000, #660000);
   color: #fff;
   border: none;
   padding: 0.8rem;
@@ -84,7 +85,8 @@ body {
 }
 
 .buttons:hover {
-  background: linear-gradient(90deg, #cc3300, #ff6600);
+  /*background: linear-gradient(90deg, #cc3300, #ff6600);*/
+  background: linear-gradient(90deg, #660000, #ff6600);
   box-shadow: 0 0 10px #ff1a1a, 0 0 20px #990000;
 }
 
@@ -95,7 +97,8 @@ body {
 }
 
 #nextButton .buttons {
-  background: linear-gradient(90deg, #ff0000, #660000);
+  /*background: linear-gradient(90deg, #ff0000, #660000);*/
+  background: linear-gradient(90deg, #ff6600, #cc3300);
   color: white;
 }
 
