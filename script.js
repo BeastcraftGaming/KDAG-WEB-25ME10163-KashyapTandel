@@ -288,10 +288,14 @@ function submit(){
             } 
             
         }
-        if (button.dataset.correct === 'true' && anySelected){
 
-            button.classList.add("correct");
-        }
+    })
+    
+    buttons.forEach((button) =>{
+      if (button.dataset.correct === 'true' && anySelected){
+
+        button.classList.add("correct");
+      }
     })
 
     //console.log(anySelected);
