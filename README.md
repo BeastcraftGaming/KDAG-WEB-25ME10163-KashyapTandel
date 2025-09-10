@@ -8,4 +8,4 @@ Had learnt javascript for mask task but it was only backend in nodejs.
 
 I had made the quiz system so that it is easy to implement multiple answer questions in future if needed. I wasn't able to implement a countdown timer due to time constraints.
 
-note: no AI was used in making the javascript code. But had to take a lot of help from google and chatgpt for CSS as I didn't had time to learn it. But I had make sure I understand everything first.
+note: no AI was used in making the javascript code. But had to take a lot of help from google and chatgpt for CSS as I didn't had time to learn it. And I will ensure that I will acquire that skill too once I get time.
